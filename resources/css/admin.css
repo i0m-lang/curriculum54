@@ -1,0 +1,311 @@
+@charset "UTF-8";
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+/* 管理画面共通 */
+
+.adminContentsArea{
+    display: flex;
+}
+
+.adminHeader{
+    background-color: #fff;
+    width: 100%;
+    padding: 5px 20px;
+    text-align: right;
+}
+
+.rightContents{
+    background-color: #f5f9fc;
+    width: calc(100% - 170px);
+}
+
+.adminAside{
+    height: 100vh;
+    width: 170px;
+}
+
+/* login */
+
+.loginFormArea {
+    box-shadow: 2px 2px 7px 1px rgb(0 0 0 / 8%), -2px -2px 7px 1px rgb(0 0 0 / 8%);
+    max-width:400px;
+    width:90%;
+    margin: auto;
+    padding: 30px;
+    border-radius: 5px;
+    position: relative;
+}
+
+h2.loginHeader {
+    font-size: 2em;
+    text-align: center;
+}
+
+.login{
+    position: relative;
+    height: 100vh;
+    margin: 2vh 0;
+}
+
+.loginInput {
+    border: solid 1px #cbcbcb;
+    max-width:400px;
+    width:100%;
+    margin: 0 0 2vh 0;
+    border-radius: 5px;
+}
+
+.loginBtn {
+    color: #ffffff;
+    background-color: #88c8ac;
+    max-width:400px;
+    width:100%;
+    margin:2vh 0;
+    border-radius: 5px;
+}
+
+.pageHeader{
+    color: #000000;
+    font-size: 2em;
+    margin: 1em 1em;
+}
+
+/* パンくずリスト */
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  background-color: #f7f7f7;
+  border: solid 1px #000;
+  padding: 0.5em 0.5em;
+}
+
+.breadcrumb li:not(:last-of-type)::after {
+  content: "›";
+  margin: 0 .6em; /* 記号の左右の余白 */
+  color: #777; /* 記号の色 */
+}
+
+
+.home{
+    font-size: 1rem;
+    text-align:left;
+}
+
+.homeMenuArea {
+    box-shadow: 2px 2px 7px 1px rgb(0 0 0 / 8%), -2px -2px 7px 1px rgb(0 0 0 / 8%);
+    padding: 0.5em 1em;
+    margin: 1em 1em;
+    width:90%;
+    color: #2c2c2f;
+    background: #f5f9fc;/*背景色*/
+}
+.homeMenuArea p {
+    margin: 1em; 
+    padding: 0;
+}
+
+.add_account {
+    color: #88c8ac;
+    font-weight: bold;
+    margin: 1em 1em;
+}
+
+.list_account{
+    padding: 0 1vh;
+    background-color: #f7f7f7;
+    margin: 1em 1em;
+}
+
+/* サイドメニュー */
+li.adminAsideLi {
+    border-bottom: solid 1px #fff;
+    padding: 1vh;
+    margin: 2vh 0;
+}
+
+.adminAside{
+    background: #88c8ac;
+    padding: 1vh;
+}
+
+i {
+    color: #fff;
+    padding: 10 10;
+}
+
+a.adminAsideLink {
+    color: #fff;
+}
+
+.hamburger {
+    position: relative;
+    width: 30px;
+    height: 22px;
+    margin: 0 0 0 auto; 
+    cursor: pointer;
+}
+
+.hamburger span {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff; 
+    border-radius: 2px;
+}
+
+.hamburger span:nth-child(1) {
+    top: 0;
+}
+
+.hamburger span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hamburger span:nth-child(3) {
+    bottom: 0;
+}
+
+/* アカウント一覧テーブル */
+.signupBtn {
+    color: #ffffff;
+    background-color: #88c8ac;
+    float: right;
+    margin: 1em 1em 1em 5em;
+    padding: 0.5em 0.5em;
+    border-radius: 5px;
+}
+
+.adminTebleArea {
+    margin: 1em 1em;
+}
+
+.teble {
+    background-color: #fff;
+    border: solid 1px #eeeeee;
+}
+
+th {
+    background-color: #eeeeee;
+    padding: 0.5em 0.5em;
+}
+
+td {
+    border: solid 1px #eeeeee;
+    padding: 0.5em 0.5em;
+}
+
+/* アカウント登録 */
+.signupBtn{
+
+}
+
+.main{
+    color: #333;
+}
+
+.contentsArea{
+    width: 100%;
+    padding: 80px 20px 50px;
+}
+
+
+.contactMainBox{
+    max-width: 1500px;
+    width: 100%;
+    margin: 0 2px;
+}
+
+.contactItem .required {
+    background: #88c8ac;
+    color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.contactItem{
+    border-top: 1px #eaedf2 solid;
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;   
+}
+
+.required{
+    margin: 0 1em 0 0;
+}
+
+.textItem{
+    padding: 20px 10px;
+    margin:  0 1em 0 0;
+    display: flex;
+}
+
+.errorMessage{
+    margin:  0 0 0 1em;
+}
+
+.inputItem{
+    padding: 2px 10px;
+    margin: 0em 0em;
+    width: 40%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.textInput{
+    background-color: #eaedf2;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.select{
+    background-color: #eaedf2;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 2px #eaedf2 solid;
+    border-radius: 8px;
+}
+
+.textItem label{
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.submitButton{
+    width: 90%;
+    margin: auto;
+    max-width: 300px;
+    background-color: #88c8ac;
+    border: 2px #333 solid;
+    border-radius: 8px;
+    display: block;
+    padding: 20px 5px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.dateInput {
+    border: 1px #888b91 solid;
+}
+
+.select{
+    border: 1px #888b91 solid;
+}
+
+.contactText {
+    background-color: #ebedf2;
+    width: 100%;
+    height: 200px;
+}
+
+.errorMessage{
+    color: red;
+    display: block;
+    margin-top: 5px;
+}		
