@@ -105,15 +105,16 @@ h2.loginHeader {
     padding: 0;
 }
 
-.add_account {
+.addAccount {
     color: #88c8ac;
     font-weight: bold;
-    margin: 1em 1em;
+    border: 7px solid #f5f9fc;
 }
 
-.list_account{
+.listAccount{
     padding: 0 1vh;
-    background-color: #f7f7f7;
+    background-color: #e9e9e9;
+    border: 7px solid #f5f9fc;
     margin: 1em 1em;
 }
 
@@ -197,10 +198,6 @@ td {
 }
 
 /* アカウント登録 */
-.signupBtn{
-
-}
-
 .main{
     color: #333;
 }
@@ -309,3 +306,11 @@ td {
     display: block;
     margin-top: 5px;
 }		
+
+.memorizedItem{
+    margin:0;
+}
+
+.tableCreateLink{
+    color: #88c8ac;
+}

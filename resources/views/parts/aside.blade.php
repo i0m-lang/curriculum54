@@ -18,7 +18,11 @@
             </li>
             <li class="adminAsideLi">
                 <i class="fa-solid fa-envelopes-bulk"></i>
-                <a href="{{ route('admin.account') }}" class="adminAsideLink">お問い合わせ一覧</a>
+                <a href="{{ route('contact.index') }}" class="adminAsideLink">お問い合わせ一覧</a>
+            </li>
+            <li class="adminAsideLi">
+                <i class="fa-solid fa-envelopes-bulk"></i>
+                <a href="{{ route('contact.user') }}" class="adminAsideLink">お問い合わせ(ユーザー)</a>
             </li>
         </ul>
     </nav>

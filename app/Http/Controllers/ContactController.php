@@ -4,54 +4,71 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Contact;
 
 class ContactController extends Controller
 {
     public function index()
     {
-        return view('contact.index');
+        $contacts = Contact::paginate(5);
+        return view('contact.index', compact('contacts'));
+    }
+    
+    public function edit($id)
+    {
+        $contact = Contact::findOrFail($id);
+        return view('contact.edit', compact('contact'));
+    }
+
+    public function user()
+    {
+        return view('contact.user');
     }
 
     public function send(Request $request)
     {
-        $user = new User();
-        $user->name       = $request->name;
-        $user->kana       = $request->kana;
-        $user->email      = $request->email;
-        $user->password   = Hash::make($request->password);
-        $user->phone      = $request->phone;
-        $user->zipcode    = $request->postcode;
-        $user->prefecture = $request->prefecture;
-        $user->city       = $request->city;
-        $user->address    = $request->address;
-        $user->remarks    = $request->remarks;
+        $contact = new Contact();
+        $contact->company    = $request->company;
+        $contact->name       = $request->name;
+        $contact->phone      = $request->phone;
+        $contact->mail      = $request->mail;
+        $contact->birthday    = $request->birthday;
+        $contact->sex = $request->sex;
+        $contact->job       = $request->job;
+        $contact->contact    = $request->contact;
 
-        $user->save();
+        $contact->save();
 
-        return redirect()->route('admin.account')->with('success', 'アカウントを登録しました。');
+        return redirect()->route('contact.index')->with('success', 'アカウントを登録しました。');
     }
 
     public function confirm(Request $request)
     {
         if ($request->isMethod('get')) {
-            return redirect()->route('contact.index');
+            return redirect()->route('contact.user');
         }
 
         $validated = $request->validate([
-            'name'       => 'required|string|max:30',
-            'kana'       => 'required|string|max:30',
-            'email'      => 'required|email|unique:users,email',
-            'password'   => 'required|min:8',
-            'phone'      => 'required|regex:/^[0-9-]+$/',
-            'postcode'   => 'required|regex:/^[0-9-]+$/',
-            'prefecture' => 'required',
-            'city'       => 'required|max:30',
-            'address'    => 'required|max:50',
-            'remarks'    => 'nullable|max:255',
+            'company'  => 'required|string|max:50',
+            'name'     => 'required|string|max:30',
+            'phone'    => 'required|regex:/^[0-9-]+$/',
+            'mail'     => 'required|email',
+            'birthday' => 'required|date',
+            'sex'      => 'required',
+            'job'      => 'required',
+            'contact'  => 'required|max:1000',
         ]);
 
         return view('contact.confirm', compact('validated'));
+    }
+    
+    public function update(Request $request)
+    {
+        $contact = Contact::findOrFail($request->id);
+        $contact->update($request->only(['status', 'remarks']));
+
+        return redirect()->route('contact.index')
+                        ->with('message', '更新しました');
     }
 }

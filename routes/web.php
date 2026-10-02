@@ -21,3 +21,8 @@ Route::post('/edit/confirm', [EditController::class, 'confirm'])->name('edit.con
 Route::post('/edit/send', [EditController::class, 'send'])->name('edit.send');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
+Route::get('/contact/edit/{id}', [ContactController::class, 'edit'])->name('contact.edit');
+Route::post('/contact/update', [ContactController::class, 'update'])->name('contact.update');
+Route::get('/contact/user', [ContactController::class, 'user'])->name('contact.user');
+Route::post('/contact/confirm', [ContactController::class, 'confirm'])->name('contact.confirm');
+Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');

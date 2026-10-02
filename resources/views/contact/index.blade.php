@@ -6,9 +6,13 @@
 <nav>
 <ol class="breadcrumb">
     <li class="homeBread"><a href="{{ route('admin.index') }}">TOP</a></li>
-    <li class="homeBread"><a href="{{ route('admin.account') }}">お問い合わせ一覧</a></li>
+    <li class="homeBread"><a href="{{ route('contact.index') }}">お問い合わせ一覧</a></li>
 </ol>
 </nav>
+
+<div>
+    <h2 class="pageHeader">お問い合わせ一覧</h2>
+</div>
 
 <div class="adminTebleArea">
     <table class="teble">
@@ -24,7 +28,7 @@
         <tbody class="tebleTbody">
                 @foreach($contacts as $contact)
                     <tr>
-                        <td><a href="{{ route('contact.index', $content->id) }}" class="tableCreateLink">編集</a></td>
+                        <td><a href="{{ route('contact.edit', $contact->id) }}" class="tableCreateLink">編集</a></td>
                         <td>{{ $contact->status }}</td>
                         <td>{{ $contact->company }}</td>
                         <td>{{ $contact->name }}</td>
@@ -33,5 +37,6 @@
                 @endforeach
         </tbody>
     </table>
+    {{ $contacts->links() }}
 </div>
 @endsection

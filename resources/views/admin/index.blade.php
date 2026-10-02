@@ -13,8 +13,11 @@
 </div>
 
 <div class="homeMenuArea">
-    <p><a href="{{ route('signup.index') }}" class="add_account">アカウント登録</a></p>
-    <p><a href="{{ route('admin.account') }}" class="list_account">アカウント一覧</a></p>
-    <p><a href="{{ route('contact.index') }}" class="list_account">お問い合わせ一覧</a></p>
+    <table><tr>
+    <td class="addAccount"><a href="{{ route('signup.index') }}">アカウント登録</a></td>
+    <td class="addAccount"><a href="{{ route('signup.index') }}">お問い合わせ情報</a></td></tr>
+    <tr>
+    <td class="listAccount"><a href="{{ route('admin.account') }}">アカウント一覧</a></td>
+    <td class="listAccount"><a href="{{ route('contact.index') }}">お問い合わせ一覧</a></td></tr>
 </div>
 @endsection

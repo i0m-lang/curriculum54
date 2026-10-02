@@ -6,23 +6,17 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::table('contacts', function (Blueprint $table) {
-            $table->string('status')->after('remarks');
+            $table->string('status')->default('未対応')->change();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
-        Schema::table('=contacts', function (Blueprint $table) {
-            //
+        Schema::table('contacts', function (Blueprint $table) {
+            $table->string('status')->default(null)->change();
         });
     }
 };
