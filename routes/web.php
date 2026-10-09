@@ -26,3 +26,4 @@ Route::post('/contact/update', [ContactController::class, 'update'])->name('cont
 Route::get('/contact/user', [ContactController::class, 'user'])->name('contact.user');
 Route::post('/contact/confirm', [ContactController::class, 'confirm'])->name('contact.confirm');
 Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
+Route::get('/contact/complete', [ContactController::class, 'complete'])->name('contact.complete'); 

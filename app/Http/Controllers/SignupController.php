@@ -22,7 +22,7 @@ class SignupController extends Controller
         $user->email      = $request->email;
         $user->password   = Hash::make($request->password);
         $user->phone      = $request->phone;
-        $user->zipcode    = $request->postcode;
+        $user->postcode    = $request->postcode;
         $user->prefecture = $request->prefecture;
         $user->city       = $request->city;
         $user->address    = $request->address;

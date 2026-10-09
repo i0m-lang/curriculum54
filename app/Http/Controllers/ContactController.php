@@ -26,23 +26,6 @@ class ContactController extends Controller
         return view('contact.user');
     }
 
-    public function send(Request $request)
-    {
-        $contact = new Contact();
-        $contact->company    = $request->company;
-        $contact->name       = $request->name;
-        $contact->phone      = $request->phone;
-        $contact->mail      = $request->mail;
-        $contact->birthday    = $request->birthday;
-        $contact->sex = $request->sex;
-        $contact->job       = $request->job;
-        $contact->contact    = $request->contact;
-
-        $contact->save();
-
-        return redirect()->route('contact.index')->with('success', 'アカウントを登録しました。');
-    }
-
     public function confirm(Request $request)
     {
         if ($request->isMethod('get')) {
@@ -62,8 +45,33 @@ class ContactController extends Controller
 
         return view('contact.confirm', compact('validated'));
     }
+
+    public function send(Request $request)
+    {
+        if ($request->isMethod('get')) {
+            return redirect()->route('contact.user');
+        }
+        $contact = new Contact();
+        $contact->company    = $request->company;
+        $contact->name       = $request->name;
+        $contact->phone      = $request->phone;
+        $contact->mail      = $request->mail;
+        $contact->birthday    = $request->birthday;
+        $contact->sex        = $request->sex;
+        $contact->job       = $request->job;
+        $contact->contact    = $request->contact;
+
+        $contact->save();
+
+        return redirect()->route('contact.complete')->with('success', 'お問い合わせを送信しました。');
+    }
+
+    public function complete()
+    {
+        return view('contact.send');
+    }
     
-    public function update(Request $request)
+    public function update(EditRequest $request)
     {
         $contact = Contact::findOrFail($request->id);
         $contact->update($request->only(['status', 'remarks']));

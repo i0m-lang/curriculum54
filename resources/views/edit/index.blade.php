@@ -76,7 +76,7 @@
                     @enderror									
                 </div>					
                 <div class="inputItem">					
-                    <input type="text" id="postcode" name="postcode" value="{{ old('postcode', $user->zipcode) }}" class="textInput" placeholder="例）0000000">
+                    <input type="text" id="postcode" name="postcode" value="{{ old('postcode', $user->postcode) }}" class="textInput" placeholder="例）0000000">
                 </div>					
             </div>		
             <div class="contactItem">					

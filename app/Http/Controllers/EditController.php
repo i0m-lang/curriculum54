@@ -45,7 +45,7 @@ class EditController extends Controller
         $user->kana       = $request->kana;
         $user->email      = $request->email;
         $user->phone      = $request->phone;
-        $user->zipcode    = $request->postcode;
+        $user->postcode    = $request->postcode;
         $user->prefecture = $request->prefecture;
         $user->city       = $request->city;
         $user->address    = $request->address;
