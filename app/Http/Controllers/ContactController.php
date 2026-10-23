@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Contact;
+use App\Http\Requests\EditRequest;
 
 class ContactController extends Controller
 {
