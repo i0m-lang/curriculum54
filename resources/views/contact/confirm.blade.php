@@ -24,7 +24,7 @@
                 <p class="dataContentItemP">電話番号：{{ $validated['phone'] }}</p>
             </div>
             <div class="dataContentItem">
-                <p class="dataContentItemP">メールアドレス：{{ $validated['email'] }}</p>
+                <p class="dataContentItemP">メールアドレス：{{ $validated['mail'] }}</p>
             </div>
             <div class="dataContentItem">
                 <p class="dataContentItemP">生年月日：{{ $validated['birthday'] }}</p>

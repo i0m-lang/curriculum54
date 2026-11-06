@@ -37,7 +37,7 @@ class ContactController extends Controller
             'company'  => 'required|string|max:50',
             'name'     => 'required|string|max:30',
             'phone'    => 'required|regex:/^[0-9-]+$/',
-            'mail'     => 'required|email',
+            'mail'     => 'required|mail',
             'birthday' => 'required|date',
             'sex'      => 'required',
             'job'      => 'required',
